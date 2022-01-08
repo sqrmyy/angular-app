@@ -18,9 +18,7 @@ export class HelloComponent implements OnInit {
     this.title = 'Hello-app'
     this.message = 'FormControlを使う'
     this.myControl = new FormGroup({
-      name: new FormControl(''),
-      mail: new FormControl(''),
-      age: new FormControl(0)
+      control: new FormControl()
     })
   }
 
