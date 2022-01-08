@@ -3,7 +3,8 @@
     <p>{{message}}</p>
     <form [formGroup]="myControl" (ngSubmit)="onSubmit()">
         <div>
-            <label><input type="checkbox" formControlName="control">Check Box</label>
+            <label><input type="radio" value="male" formControlName="control">male</label>
+            <label><input type="radio" value="female" formControlName="control">female</label>
         </div>
         <div>
             <input type="submit" value="click">
