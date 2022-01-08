@@ -3,8 +3,9 @@
     <p>{{message}}</p>
     <form [formGroup]="myControl" (ngSubmit)="onSubmit()">
         <div>
-            <label><input type="radio" value="male" formControlName="control">male</label>
-            <label><input type="radio" value="female" formControlName="control">female</label>
+            <select formControlName="control">
+                <option *ngFor="let os of osList" [ngValue]="os.name">{{os.name}}</option>
+            </select>
         </div>
         <div>
             <input type="submit" value="click">

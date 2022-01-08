@@ -11,6 +11,13 @@ export class HelloComponent implements OnInit {
   message: string;
   myControl: FormGroup
 
+  osList = [
+  {name: 'Windows'},
+  {name: 'MacOS'},
+  {name: 'Linux'},
+  {name: 'ChromeOS'}
+  ]
+
   constructor() { 
   }
 
