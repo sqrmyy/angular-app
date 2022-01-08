@@ -3,7 +3,7 @@
     <p>{{message}}</p>
     <form [formGroup]="myControl" (ngSubmit)="onSubmit()">
         <div>
-            <select formControlName="control">
+            <select formControlName="control" size="5" multiple>
                 <option *ngFor="let os of osList" [ngValue]="os.name">{{os.name}}</option>
             </select>
         </div>
