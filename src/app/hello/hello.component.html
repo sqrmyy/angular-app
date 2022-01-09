@@ -1,35 +1,4 @@
 <div id="body">
     <h1>{{title}}</h1>
-    <p>{{message}}</p>
-    <form [formGroup]="myControl" (ngSubmit)="onSubmit()">
-        <table>
-            <tr><th>Name</th><td>
-                <div *ngIf="name.errors != null && name.errors.required != null">Nameは必須項目です。</div>
-                <div *ngIf="name.errors != null && name.errors.alpha != null">半角アルファベットのみ有効です。</div>
-                <div><input type="text" formControlName="name"></div>
-            </td></tr>
-            <tr>
-                <th>Mail</th>
-                <td>
-                    <div *ngIf="mail.errors != null && mail.errors.email != null">メールアドレスが必要です。</div>
-                    <div><input type="text" formControlName="mail"></div>
-                </td>
-            </tr>
-            <tr>
-                <th>age</th>
-                <td>
-                    <div *ngIf="age.errors != null && age.errors.min != null">1歳以上を入力ください</div>
-                    <div *ngIf="age.errors != null && age.errors.max != null">150歳以下を入力ください</div>
-                    <div *ngIf="age.errors != null && age.errors.even != null">偶数のみ入力可能です。</div>
-                    <div><input type="number" formControlName="age"></div>
-                </td>
-            </tr>
-            <tr>
-                <th></th>
-                <td>
-                    <input [disabled]="myControl.invalid" type="submit" value="click">
-                </td>
-            </tr>
-        </table>
-    </form>
+    <app-message [content]="message"></app-message>
 </div>

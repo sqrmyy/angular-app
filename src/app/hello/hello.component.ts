@@ -8,7 +8,7 @@ import { FormControl, FormGroup, FormBuilder, Validators } from '@angular/forms'
 })
 export class HelloComponent implements OnInit {
   title: string;
-  message: string;
+  message: string[];
   myControl: FormGroup
 
   constructor(private fb: FormBuilder) { 
@@ -16,25 +16,11 @@ export class HelloComponent implements OnInit {
 
   ngOnInit() {
     this.title = 'Hello-app'
-    this.message = 'FormControlを使う'
-    this.myControl = this.fb.group({
-      name: new FormControl('', [Validators.required, alpha]),
-      mail: new FormControl('', [Validators.email]),
-      age: new FormControl(0, [Validators.min(1), Validators.max(150), even]),
-    })
-  }
-
-  get name() { return this.myControl.get('name') }
-  get mail() { return this.myControl.get('mail') }
-  get age() { return this.myControl.get('age')}
-
-  onSubmit() {
-    if (this.myControl.invalid) {
-      this.message = 'VALIDATION ERROR'
-    } else { 
-      let result = this.myControl.value
-      this.message = JSON.stringify(result)
-    }
+    this.message = [
+      '新しいコンポーネントです',
+      '複数のメッセージを表示できます',
+      '属性は配列を設定します',
+    ]
   }
 }
 
