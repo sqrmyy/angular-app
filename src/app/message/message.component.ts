@@ -17,4 +17,12 @@ export class MessageComponent implements OnInit {
   doAction(event) { 
     this.action.emit(event)
   }
+
+  push(item: string) { 
+    this.content.push(item)
+  }
+
+  pop() { 
+    this.content.pop()
+  }
 }
