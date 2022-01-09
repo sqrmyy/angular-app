@@ -18,9 +18,9 @@ export class HelloComponent implements OnInit {
     this.title = 'Hello-app'
     this.message = 'FormControlを使う'
     this.myControl = this.fb.group({
-      name: new FormControl('', [Validators.required]),
+      name: new FormControl('', [Validators.required, alpha]),
       mail: new FormControl('', [Validators.email]),
-      age: new FormControl(0, [Validators.min(1), Validators.max(150)]),
+      age: new FormControl(0, [Validators.min(1), Validators.max(150), even]),
     })
   }
 
@@ -36,4 +36,17 @@ export class HelloComponent implements OnInit {
       this.message = JSON.stringify(result)
     }
   }
+}
+
+function alpha(c: FormControl) { 
+  let REGPATTERN = /^[a-zA-Z]+$/;
+  if (REGPATTERN.test(c.value)) {
+    return null
+  } else { 
+    return { alpha: {valid: false}}
+  }
+}
+
+function even(c: FormControl) { 
+  return c.value % 2 === 0 ? null : { even: {valid: false}}
 }

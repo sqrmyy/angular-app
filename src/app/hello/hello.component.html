@@ -5,6 +5,7 @@
         <table>
             <tr><th>Name</th><td>
                 <div *ngIf="name.errors != null && name.errors.required != null">Nameは必須項目です。</div>
+                <div *ngIf="name.errors != null && name.errors.alpha != null">半角アルファベットのみ有効です。</div>
                 <div><input type="text" formControlName="name"></div>
             </td></tr>
             <tr>
@@ -19,6 +20,7 @@
                 <td>
                     <div *ngIf="age.errors != null && age.errors.min != null">1歳以上を入力ください</div>
                     <div *ngIf="age.errors != null && age.errors.max != null">150歳以下を入力ください</div>
+                    <div *ngIf="age.errors != null && age.errors.even != null">偶数のみ入力可能です。</div>
                     <div><input type="number" formControlName="age"></div>
                 </td>
             </tr>
