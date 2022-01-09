@@ -1,5 +1,5 @@
 <div class="container">
-    <ul (click)="doClick()">
-        <li class="message" *ngFor="let item of _content">{{item}}</li>
+    <ul>
+        <li class="message" (click)="doAction($event)" *ngFor="let item of content">{{item}}</li>
     </ul>
 </div>

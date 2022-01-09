@@ -1,4 +1,4 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 
 @Component({
   selector: 'app-message',
@@ -6,23 +6,15 @@ import { Component, OnInit, Input } from '@angular/core';
   styleUrls: ['./message.component.css']
 })
 export class MessageComponent implements OnInit {
-  private _content: string[]
+  @Input() content: string[]
+  @Output() action = new EventEmitter<MouseEvent>()
 
   constructor() { }
 
   ngOnInit(): void {
   }
 
-  @Input()
-  set content(msgs: string) { 
-    this._content = msgs.split(',')
-  }
-
-  get content() { 
-    return this._content.join(',')
-  }
-
-  doClick() { 
-    this._content.pop()
+  doAction(event) { 
+    this.action.emit(event)
   }
 }
