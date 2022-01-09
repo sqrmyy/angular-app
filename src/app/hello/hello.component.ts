@@ -8,7 +8,7 @@ import { FormControl, FormGroup, FormBuilder, Validators } from '@angular/forms'
 })
 export class HelloComponent implements OnInit {
   title: string;
-  message: string[];
+  message: string;
   myControl: FormGroup
 
   constructor(private fb: FormBuilder) { 
@@ -16,11 +16,7 @@ export class HelloComponent implements OnInit {
 
   ngOnInit() {
     this.title = 'Hello-app'
-    this.message = [
-      '新しいコンポーネントです',
-      '複数のメッセージを表示できます',
-      '属性は配列を設定します',
-    ]
+    this.message = 'One,Two,Three,Four,Five'
   }
 }
 

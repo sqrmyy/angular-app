@@ -6,11 +6,23 @@ import { Component, OnInit, Input } from '@angular/core';
   styleUrls: ['./message.component.css']
 })
 export class MessageComponent implements OnInit {
-  @Input() content: string[]
+  private _content: string[]
 
   constructor() { }
 
   ngOnInit(): void {
   }
 
+  @Input()
+  set content(msgs: string) { 
+    this._content = msgs.split(',')
+  }
+
+  get content() { 
+    return this._content.join(',')
+  }
+
+  doClick() { 
+    this._content.pop()
+  }
 }
