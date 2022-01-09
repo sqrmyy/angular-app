@@ -2,10 +2,10 @@
     <h1>{{title}}</h1>
     <div>add item...</div>
     <div>
-        <input #input1 type="text">
-        <button (click)="list1.push(input1.value)">push</button>
-        <button (click)="list1.pop()">pop</button>
+        <input type="text" [(ngModel)]="input1">
+        <button (click)="push()">push</button>
+        <button (click)="pop()">pop</button>
     </div>
     <hr>
-    <app-message #list1 [content]="message" (action)="doClick($event)"></app-message>
+    <app-message [content]="message" (action)="doClick($event)"></app-message>
 </div>

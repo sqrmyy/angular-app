@@ -1,5 +1,6 @@
-import { Component, OnInit } from '@angular/core';
-import { FormControl, FormGroup, FormBuilder, Validators } from '@angular/forms';
+import { Component, OnInit, ViewChild } from '@angular/core';
+
+import { MessageComponent } from '../message/message.component';
 
 @Component({
   selector: 'app-hello',
@@ -11,13 +12,29 @@ export class HelloComponent implements OnInit {
   message: string[];
   lastTarget: any
   lastColor: string
+  input1: string
+  @ViewChild(MessageComponent)
+  private msgComponent: MessageComponent
 
-  constructor(private fb: FormBuilder) { 
+  constructor() { 
   }
 
   ngOnInit() {
     this.title = 'Hello-app'
     this.message = ['First item', 'Second item', 'Third item']
+    this.input1 = ''
+  }
+
+  push() { 
+    if (this.input1 == '') { 
+      alert('テキストを入力してください')
+      return
+    }
+    this.msgComponent.push(this.input1)
+  }
+
+  pop() { 
+    this.msgComponent.pop()
   }
 
   doClick(event) { 
@@ -30,17 +47,4 @@ export class HelloComponent implements OnInit {
     event.target.style.color = 'white'
     event.target.style.backgroundColor = 'red'
   }
-}
-
-function alpha(c: FormControl) { 
-  let REGPATTERN = /^[a-zA-Z]+$/;
-  if (REGPATTERN.test(c.value)) {
-    return null
-  } else { 
-    return { alpha: {valid: false}}
-  }
-}
-
-function even(c: FormControl) { 
-  return c.value % 2 === 0 ? null : { even: {valid: false}}
 }
