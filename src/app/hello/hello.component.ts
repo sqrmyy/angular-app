@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormControl, FormGroup } from '@angular/forms';
+import { FormGroup, FormBuilder } from '@angular/forms';
 
 @Component({
   selector: 'app-hello',
@@ -11,22 +11,16 @@ export class HelloComponent implements OnInit {
   message: string;
   myControl: FormGroup
 
-  osList = [
-    {name: 'android'},
-    {name: 'iOS'},
-    {name: 'blackberry' },
-    {name: 'symbian' },
-    {name: 'Fucsia'}
-  ]
-
-  constructor() { 
+  constructor(private fb: FormBuilder) { 
   }
 
   ngOnInit() {
     this.title = 'Hello-app'
     this.message = 'FormControlを使う'
-    this.myControl = new FormGroup({
-      control: new FormControl()
+    this.myControl = this.fb.group({
+      name: [''],
+      mail: [''],
+      age: ['']
     })
   }
 
