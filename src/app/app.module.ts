@@ -2,6 +2,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms'
 import { RouterModule, Routes } from '@angular/router'
+import { HttpClientModule } from '@angular/common/http'
 
 import { AppComponent } from './app.component';
 import { HelloComponent } from './hello/hello.component';
@@ -11,7 +12,7 @@ import { MycheckService } from './mycheck.service';
 
 const routes: Routes = [
   { path: 'hello', component: HelloComponent },
-  { path: 'msg/:id', component: MessageComponent},
+  { path: 'msg', component: MessageComponent},
 ]
 
 @NgModule({
@@ -23,12 +24,10 @@ const routes: Routes = [
   ],
   imports: [
     BrowserModule,
+    HttpClientModule,
     FormsModule,
     ReactiveFormsModule,
-    RouterModule.forRoot(
-      routes,
-      {enableTracing: true}
-    )
+    RouterModule.forRoot(routes)
   ],
   providers: [],
   bootstrap: [AppComponent]
