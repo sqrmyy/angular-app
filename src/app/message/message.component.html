@@ -1,7 +1,12 @@
 <div style="margin:10px">
     <p>{{message}}</p>
+    <div><label>
+        <input #check type="checkbox"
+         (change)="updateData(check.checked)"
+         checked>show all data.
+    </label></div>
     <input type="text" [formControl]="input">
-    <button (click)="doAction()">click</button>
+    <button #btn>click</button>
 </div>
 <div class="container">
     <p class="message">{{getData()}}</p>
