@@ -19,9 +19,11 @@ export class MycheckService {
   private mydata:MyData = new MyData()
 
   constructor(private client: HttpClient) {
-    this.client.get('assets/data.json')
-      .subscribe((result: MyData) => {
-        this.mydata = result
+    fetch('assets/data.json')
+      .then((resp) => { 
+        resp.json().then((val) => { 
+          this.mydata = val
+        })
       })
   }
 
