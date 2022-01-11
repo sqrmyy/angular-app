@@ -12,12 +12,11 @@ export class HelloComponent implements OnInit {
   title: string;
   message: string;
 
-  constructor(private service: MycheckService) { 
-    service.push('hello data')
+  constructor() { 
   }
 
   ngOnInit() {
     this.title = 'Hello-app'
-    this.message = this.service.json
+    this.message = 'sample message'
   }
 }
