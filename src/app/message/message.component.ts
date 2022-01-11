@@ -7,22 +7,12 @@ import { MycheckService } from '../mycheck.service';
   styleUrls: ['./message.component.css']
 })
 export class MessageComponent implements OnInit {
-  @Input() content: string[]
+  content: string[]
 
   constructor(private service: MycheckService) { 
-    this.content = []
   }
 
   ngOnInit(): void {
-    this.content.push(this.service.hello())
-  }
-
-  push(item: string) { 
-    this.service.name = item
-    this.content.push(this.service.hello())
-  }
-
-  pop() { 
-    this.content.pop()
+    this.content = this.service.list
   }
 }

@@ -16,6 +16,6 @@ export class HelloComponent implements OnInit {
 
   ngOnInit() {
     this.title = 'Hello-app'
-    this.message = this.service.hello()
+    this.message = 'data size: ' + this.service.size
   }
 }
