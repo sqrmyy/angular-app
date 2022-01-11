@@ -4,12 +4,14 @@ import { MycheckService } from '../mycheck.service';
 @Component({
   selector: 'app-message',
   templateUrl: './message.component.html',
-  styleUrls: ['./message.component.css']
+  styleUrls: ['./message.component.css'],
+  providers: [MycheckService],
 })
 export class MessageComponent implements OnInit {
   content: string[]
 
   constructor(private service: MycheckService) { 
+    service.push('message data')
   }
 
   ngOnInit(): void {

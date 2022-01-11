@@ -6,16 +6,18 @@ import { MycheckService } from '../mycheck.service';
   selector: 'app-hello',
   templateUrl: './hello.component.html',
   styleUrls: ['./hello.component.css'],
+  providers: [MycheckService],
 })
 export class HelloComponent implements OnInit {
   title: string;
   message: string;
 
-  constructor(private service:MycheckService) { 
+  constructor(private service: MycheckService) { 
+    service.push('hello data')
   }
 
   ngOnInit() {
     this.title = 'Hello-app'
-    this.message = 'data size: ' + this.service.size
+    this.message = this.service.json
   }
 }
