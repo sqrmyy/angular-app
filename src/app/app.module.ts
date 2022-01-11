@@ -11,7 +11,7 @@ import { MycheckService } from './mycheck.service';
 
 const routes: Routes = [
   { path: 'hello', component: HelloComponent },
-  { path: 'msg', component: MessageComponent},
+  { path: 'msg/:id', component: MessageComponent},
 ]
 
 @NgModule({
