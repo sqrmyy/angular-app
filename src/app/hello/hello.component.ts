@@ -19,6 +19,6 @@ export class HelloComponent implements OnInit {
   ngOnInit() {
     this.title = 'Hello-app'
     this.message = 'params: ' +
-      JSON.stringify(this.route.snapshot.paramMap)
+      JSON.stringify(this.route.snapshot.queryParamMap)
   }
 }
