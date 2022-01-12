@@ -12,6 +12,8 @@ import { MatCheckboxModule } from '@angular/material/checkbox'
 import { MatRadioModule } from '@angular/material/radio'
 import { MatSelectModule } from '@angular/material/select'
 import { MatSliderModule } from '@angular/material/slider'
+import { MatNativeDateModule } from '@angular/material/core'
+import { MatDatepickerModule } from '@angular/material/datepicker'
 
 import { AppComponent } from './app.component';
 import { HelloComponent } from './hello/hello.component';
@@ -48,6 +50,8 @@ const routes: Routes = [
     MatRadioModule,
     MatSelectModule,
     MatSliderModule,
+    MatNativeDateModule,
+    MatDatepickerModule,
     BrowserAnimationsModule
   ],
   providers: [],

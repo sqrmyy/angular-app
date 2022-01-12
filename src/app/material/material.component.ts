@@ -15,8 +15,7 @@ export class MaterialComponent implements OnInit {
   ngOnInit(): void {
     this.message = 'please selet button'
     this.myControl = new FormGroup({
-      slider1: new FormControl(''),
-      slider2: new FormControl(''),
+      picker1: new FormControl(new Date()),
     })
   }
 
