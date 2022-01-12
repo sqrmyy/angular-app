@@ -14,6 +14,8 @@ import { MatSelectModule } from '@angular/material/select'
 import { MatSliderModule } from '@angular/material/slider'
 import { MatNativeDateModule } from '@angular/material/core'
 import { MatDatepickerModule } from '@angular/material/datepicker'
+import { MatToolbarModule } from '@angular/material/toolbar'
+import { MatDividerModule } from '@angular/material/divider'
 
 import { AppComponent } from './app.component';
 import { HelloComponent } from './hello/hello.component';
@@ -52,6 +54,8 @@ const routes: Routes = [
     MatSliderModule,
     MatNativeDateModule,
     MatDatepickerModule,
+    MatToolbarModule,
+    MatDividerModule,
     BrowserAnimationsModule
   ],
   providers: [],
