@@ -8,6 +8,8 @@ import { MatIconModule } from '@angular/material/icon'
 import { MatButtonToggleModule } from '@angular/material/button-toggle'
 import { MatInputModule } from '@angular/material/input'
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { MatCheckboxModule } from '@angular/material/checkbox'
+import { MatRadioModule } from '@angular/material/radio'
 
 import { AppComponent } from './app.component';
 import { HelloComponent } from './hello/hello.component';
@@ -40,6 +42,8 @@ const routes: Routes = [
     MatIconModule,
     MatButtonToggleModule,
     MatInputModule,
+    MatCheckboxModule,
+    MatRadioModule,
     BrowserAnimationsModule
   ],
   providers: [],
