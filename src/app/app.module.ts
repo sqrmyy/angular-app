@@ -10,6 +10,7 @@ import { MatInputModule } from '@angular/material/input'
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatCheckboxModule } from '@angular/material/checkbox'
 import { MatRadioModule } from '@angular/material/radio'
+import { MatSelectModule } from '@angular/material/select'
 
 import { AppComponent } from './app.component';
 import { HelloComponent } from './hello/hello.component';
@@ -44,6 +45,7 @@ const routes: Routes = [
     MatInputModule,
     MatCheckboxModule,
     MatRadioModule,
+    MatSelectModule,
     BrowserAnimationsModule
   ],
   providers: [],

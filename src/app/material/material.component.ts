@@ -15,8 +15,8 @@ export class MaterialComponent implements OnInit {
   ngOnInit(): void {
     this.message = 'please selet button'
     this.myControl = new FormGroup({
-      check: new FormControl(true),
-      radio: new FormControl('male'),
+      select1: new FormControl(''),
+      select2: new FormControl(''),
     })
   }
 
