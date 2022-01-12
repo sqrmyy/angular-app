@@ -5,6 +5,7 @@ import { RouterModule, Routes } from '@angular/router'
 import { HttpClientModule } from '@angular/common/http'
 import { MatButtonModule } from '@angular/material/button'
 import { MatIconModule } from '@angular/material/icon'
+import { MatButtonToggleModule } from '@angular/material/button-toggle'
 
 import { AppComponent } from './app.component';
 import { HelloComponent } from './hello/hello.component';
@@ -35,6 +36,7 @@ const routes: Routes = [
     ReactiveFormsModule,
     MatButtonModule,
     MatIconModule,
+    MatButtonToggleModule,
     RouterModule.forRoot(routes),
     BrowserAnimationsModule
   ],
