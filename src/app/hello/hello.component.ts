@@ -3,7 +3,6 @@ import { ActivatedRoute } from '@angular/router';
 import { HttpClient } from '@angular/common/http';
 
 import { MycheckService } from '../mycheck.service';
-import { resourceLimits } from 'worker_threads';
 
 class MyData { 
   data:string
