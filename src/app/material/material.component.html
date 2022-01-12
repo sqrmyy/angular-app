@@ -2,19 +2,34 @@
     <h1>material works!</h1>
     <div>
         <h2>material-button.</h2>
-        <mat-card>
-            <mat-card-title>Card Layout</mat-card-title>
-            <mat-card-subtitle>this is sub title text.</mat-card-subtitle>
-            <mat-card-content>
-                This is card layout contents.
-                これは、カードレイアウトのコンテンツです。
-            </mat-card-content>
-            <mat-card-actions>
-                <button mat-flat-button color="primary">OK</button>
-                <button mat-flat-button color="accent">Continue</button>
-                <button mat-flat-button color="warn">Cancel</button>
-            </mat-card-actions>
-        </mat-card>
+        
+        <mat-accordion>
+            <mat-expansion-panel>
+                <mat-expansion-panel-header>
+                    <mat-panel-title>First Panel</mat-panel-title>
+                    <mat-panel-description>This is first panel.</mat-panel-description>
+                </mat-expansion-panel-header>
+                <div>
+                    <h2>First Panel</h2>
+                    <p>これは１つ目のパネルのコンテンツです。</p>
+                </div>
+                <mat-action-row>
+                    <button mat-button>Click</button>
+                </mat-action-row>
+            </mat-expansion-panel>
+
+            <mat-expansion-panel>
+                <mat-expansion-panel-header>
+                    <mat-panel-title>Second Panel</mat-panel-title>
+                    <mat-panel-description>This is second panel.</mat-panel-description>
+                </mat-expansion-panel-header>
+                <div>
+                    <h2>Second Panel</h2>
+                    <p>これは２つ目のパネルのコンテンツです。</p>
+                </div>
+            </mat-expansion-panel>
+        </mat-accordion>
+        
         <p class="message">This is not included in the card layout</p>
     </div>
 </div>
