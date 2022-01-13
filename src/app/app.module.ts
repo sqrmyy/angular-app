@@ -19,6 +19,7 @@ import { MatDividerModule } from '@angular/material/divider'
 import { MatCardModule } from '@angular/material/card'
 import { MatExpansionModule } from '@angular/material/expansion'
 import { MatListModule } from '@angular/material/list'
+import { MatSortModule } from '@angular/material/sort'
 
 import { AppComponent } from './app.component';
 import { HelloComponent } from './hello/hello.component';
@@ -62,6 +63,7 @@ const routes: Routes = [
     MatCardModule,
     MatExpansionModule,
     MatListModule,
+    MatSortModule,
     BrowserAnimationsModule
   ],
   providers: [],
