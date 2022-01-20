@@ -21,6 +21,9 @@ import { MatExpansionModule } from '@angular/material/expansion'
 import { MatListModule } from '@angular/material/list'
 import { MatSortModule } from '@angular/material/sort'
 import { MatTabsModule } from '@angular/material/tabs'
+import { provideFirebaseApp, initializeApp } from '@angular/fire/app';
+import { getFirestore, provideFirestore } from '@angular/fire/firestore';
+import { getAuth, provideAuth } from '@angular/fire/auth';
 
 import { AppComponent } from './app.component';
 import { HelloComponent } from './hello/hello.component';
@@ -28,8 +31,11 @@ import { MessageComponent } from './message/message.component';
 import { MystyleDirective } from './mystyle.directive';
 import { MycheckService } from './mycheck.service';
 import { MaterialComponent } from './material/material.component';
+import { environment } from '../environments/environment';
+import { FireComponent } from './fire/fire.component';
 
 const routes: Routes = [
+  { path: 'fire', component: FireComponent },
   { path: 'material', component: MaterialComponent },
   { path: 'hello', component: HelloComponent },
   { path: 'msg', component: MessageComponent},
@@ -41,7 +47,8 @@ const routes: Routes = [
     HelloComponent,
     MessageComponent,
     MystyleDirective,
-    MaterialComponent
+    MaterialComponent,
+    FireComponent
   ],
   imports: [
     BrowserModule,
@@ -66,7 +73,10 @@ const routes: Routes = [
     MatListModule,
     MatSortModule,
     MatTabsModule,
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
+    provideFirebaseApp(() => initializeApp(environment.firebase)),
+    provideFirestore(() => getFirestore()),
+    provideAuth(() => getAuth()),
   ],
   providers: [],
   bootstrap: [AppComponent]
