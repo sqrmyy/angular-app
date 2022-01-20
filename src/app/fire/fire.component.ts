@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Firestore, collectionData, collection, DocumentData, doc, docData, setDoc } from '@angular/fire/firestore';
+import { Firestore, collectionData, collection, DocumentData, doc, docData, setDoc, addDoc } from '@angular/fire/firestore';
 import { Observable } from 'rxjs';
 import { getAuth, GoogleAuthProvider, signInWithRedirect, Auth } from "firebase/auth";
 
@@ -12,7 +12,10 @@ export class FireComponent implements OnInit {
   message: string = 'people data.'
   dataList$: Observable<DocumentData>;
   input: string = ''
-  data:any
+  data: any
+  name: string
+  mail: string
+  age:number
 
   constructor(
     private firestore: Firestore,
@@ -45,6 +48,14 @@ export class FireComponent implements OnInit {
     const auth = getAuth();
     auth.signOut()
     this.access()
+  }
+
+  add() { 
+    const data = { name: this.name, mail: this.mail, age: this.age }
+    addDoc(collection(this.firestore, 'people'), data)
+    this.name = ''
+    this.mail = ''
+    this.age = 0
   }
 
   get currentUser() { 
