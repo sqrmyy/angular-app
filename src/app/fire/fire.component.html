@@ -2,11 +2,20 @@
     <h1>Firebase works!</h1>
     <div>
         <p>{{message}}</p>
-        <mat-form-field style="width: 400px;">
-            <input matInput [(ngModel)]="input" placeholder="message">
-        </mat-form-field>
-        <div>
-            <button mat-raised-button (click)="click()">Save</button>
-        </div>
+        <button mat-raised-button (click)="login()">login</button>
+        <button mat-raised-button (click)="logout()">logout</button>
+        <p>USER: {{currentUser}}</p>
+        <table>
+            <tr>
+                <th>Name</th>
+                <th>Mail</th>
+                <th>Age</th>
+            </tr>
+            <tr *ngFor="let item of data">
+                <td>{{ item['name'] }}</td>
+                <td>{{ item['mail'] }}</td>
+                <td>{{ item['age'] }}</td>
+            </tr>
+        </table>
     </div>
 </div>
