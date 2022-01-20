@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Firestore, collectionData, collection, DocumentData, doc, docData } from '@angular/fire/firestore';
+import { Firestore, collectionData, collection, DocumentData, doc, docData, setDoc } from '@angular/fire/firestore';
 import { Observable } from 'rxjs';
 
 @Component({
@@ -10,15 +10,19 @@ import { Observable } from 'rxjs';
 export class FireComponent implements OnInit {
   message: string = 'wait...'
   item$: Observable<DocumentData>;
+  input: string = ''
 
-  constructor(firestore: Firestore) {
-    const c = doc(collection(firestore, 'sampledata'), 'sampledoc');
-    this.item$ = docData(c);
-  }
+  constructor(private firestore: Firestore) {}
 
   ngOnInit(): void {
-    this.item$.subscribe((value) => { 
+    docData(doc(collection(this.firestore, 'sampledata'), 'sampledoc'))
+      .subscribe((value) => { 
       this.message = value['message']
-    })
+    });
+  }
+
+  click() { 
+    setDoc(doc(collection(this.firestore, 'sampledata'), 'sampledoc'), { message: this.input })
+    this.input = ''
   }
 }
