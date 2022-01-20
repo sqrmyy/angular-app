@@ -9,7 +9,7 @@ import { getAuth, GoogleAuthProvider, signInWithRedirect, Auth } from "firebase/
   styleUrls: ['./fire.component.css']
 })
 export class FireComponent implements OnInit {
-  message: string = 'wait...'
+  message: string = 'people data.'
   dataList$: Observable<DocumentData>;
   input: string = ''
   data:any
