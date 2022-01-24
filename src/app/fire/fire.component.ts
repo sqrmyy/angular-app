@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Firestore, collectionData, collection, DocumentData, doc, docData, setDoc, addDoc } from '@angular/fire/firestore';
+import { Firestore, collectionData, collection, DocumentData, doc, docData, setDoc, addDoc, query, where, getDocs } from '@angular/fire/firestore';
 import { Observable } from 'rxjs';
 import { getAuth, GoogleAuthProvider, signInWithRedirect, Auth } from "firebase/auth";
 
@@ -26,7 +26,7 @@ export class FireComponent implements OnInit {
   }
 
   access() { 
-    const c = collectionData(collection(this.firestore, 'people'))
+    collectionData(collection(this.firestore, 'people'))
       .subscribe((value) => { 
         this.data = value
       },
@@ -56,6 +56,16 @@ export class FireComponent implements OnInit {
     this.name = ''
     this.mail = ''
     this.age = 0
+  }
+
+  async find(val) {
+    const q = query(collection(this.firestore, 'people'), where("name", "==", val))
+    const querySnapshot = await getDocs(q);
+    let myArray = [];
+    querySnapshot.forEach((doc) => {
+      myArray.push(doc.data());
+    });
+    this.data = myArray
   }
 
   get currentUser() { 
